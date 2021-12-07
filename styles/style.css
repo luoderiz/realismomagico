@@ -26,17 +26,16 @@ body {
     margin: 0 auto;
     color: #4C718A;
     padding: 0 20px 20px 20px;
-    border: 5px solid rgb(128, 162, 182);
+    border: 5px solid #2b475a;
     font-size: 1.8rem;
   }
 
-  img {
+img {
     margin: 0 auto;
     width: 800px;
   }
 
-  li {
+li {
     color: #4A8A79;
     font-size: 1.8rem;
   }
-
