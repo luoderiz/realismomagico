@@ -10,8 +10,7 @@ myImage.onclick = function() {
 }
 
 //personalized greeting
-
-let myHeading = document.querySelector('h1');
+/* let myHeading = document.querySelector('h1');
 
 function setUserName() {
   let myName = prompt('Inserte su nombre, atento lector');
@@ -33,26 +32,28 @@ if(!localStorage.getItem('name')) {
 nameChanger.onclick = function() {
   setUserName();
 }
+ */
 
 //dinamic list
-const newList = document.createElement('ul');
+
+const newList = document.querySelector('#listaDenuncias');
 newList.id='listaDenuncias'
 const info = document.createElement('p');
 info.id='itemDenuncia'
 
 let denButton = document.querySelector('#denButton');
 
-info.textContent = 'Por ahora tenemos pocos';
+info.textContent = 'Arte con referencias al realismo mágico';
 document.body.appendChild(info);
 document.body.appendChild(newList);
 
 function insertDenuncia() {
   const listItem = document.createElement('li');
-  const listContent = prompt('Inserte aquí el robo cultural que desear denunciar');
+  const listContent = prompt('Escribí acá la manifestación artística que te gustaría que incorporemos al recorrido del proyecto');
   listItem.textContent = listContent;
   for (let item of newList.childNodes) { 
   if (listItem.textContent === item.textContent) {
-    alert('Gracias, lector. Su compromiso nos hace grandes. Igual, podría ser más atento, su denuncia ya existe');
+    alert('¡Gracias por la sugerencia! Igual, ¡la próxima vez podrías ser más atento! Esto ya está en la lista');
     return
     }
   }
