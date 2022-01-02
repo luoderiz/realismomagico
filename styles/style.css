@@ -1,27 +1,88 @@
+color palette {
+  color: #fef6e6, #C64756, #96BB7C, #184D47, #FAD586, #578462, #E2A1A6, #734580, #BCA2CD, #688199, #AACCD5}
+}
+
+alternative color palette {
+color: #47c6b7, #94c647, #c64755, #7847c6
+}
+
+
 html {
-  background-color: #FFF9E0;
+  background-color: #FAD586;
   font-size: 10px;
   font-family: 'Noto Sans', sans-serif;
 }
 
 h1 {
-  size: 20rem;
-  color: #F1C550;
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #C64756;
+  text-align: center;
+  text-shadow: 1px 1px 2px #e2a1a6;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: bolder;
+  color: #C64756;
+  text-align: center;
+  text-shadow: 0.9px 0.9px 1.8px #e2a1a6;
+}
+
+h3 {
+  font-weight: bolder;
+  font-size: 1.8rem;
+  color: #C64756; 
+  text-align: left;
+  text-shadow: 0.9px 0.9px 1.8px  #e2a1a6;
 }
 
 p {
-  color: #EA4C4C; 
+  font-size: 1.6rem;
+  color: #184D47; 
 }
+
+li {
+  font-size: 1.6rem;
+  font-style: oblique;
+  color: #184D47; 
+}
+
 a:hover {
+  font-size: 1.6rem;
   text-decoration: none;
 }
 
 a:visited {
-  color: darkblue;
+  font-size: 1.6rem;
+  color: #171747;
 }
 
-button#denButton {
-  color: #50622D;
-  background-color: #A1C45A;
-  border-radius: 1px;
+body#sugerenciasButton {
+  background: #141E30;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+}
+
+button#sugerenciasButton {
+  font-size: 2rem;
+  font-weight: bolder;
+  width: 300px;
+  padding: 20px;
+  background: #ec008c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fc6767, #ec008c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fc6767, #ec008c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+  border: 3px solid #eee;
+  border-radius: 35px;
+}
+
+#sugerenciasButton:hover {
+  animation: gradient 2s step-end 0s 1s normal forwards;
+}
+
+#sugerenciasButton:active {
+  color: rgb(173, 165, 165);
+  transform: translateY(4px);
 }

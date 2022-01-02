@@ -1,65 +1,47 @@
-let myImage = document.querySelector('#portada');
+var sugerenciasList = document.getElementById('sugerenciasList');
+var unListItem = document.createElement('li');
+var textoDeSugerencia = document.createTextNode('Primera Sugerencia');
+sugerenciasList.appendChild(unListItem);
+unListItem.appendChild(textoDeSugerencia);
 
-myImage.onclick = function() {
-  let mySrc = myImage.getAttribute('src');
-  if (mySrc === 'images/map-earth.png') {
-    myImage.setAttribute('src','images/peony-flowers.png');
+let sugerenciasListElements = ["Birdman (2014)", "El secreto de Adeline (2015)", "Diario de un maquinista (2016)", "Zoology (2016)", "Birdman (2014)"];
+
+function cargarLista() {
+  for (let elemento of sugerenciasListElements) {
+    var sugerenciasList = document.getElementById('sugerenciasList');
+    var itemDeLista = document.createElement('li');
+    var textoDelItem = document.createTextNode('elemento');
+    itemDeLista.innerHTML = elemento;
+    sugerenciasList.appendChild(itemDeLista);
+    itemDeLista.appendChild(textoDelItem);
+}
+}
+
+cargarLista();
+
+var sugerenciasButton = document.getElementById('sugerenciasButton');
+
+sugerenciasButton.onclick = function funcionSugerencia() {
+  var input = document.getElementById('sugerenciasBox');
+  var sugerenciasList = document.getElementById('sugerenciasList');
+  var sugerenciaListItem = document.createElement('li');
+  if (input.value === '') {
+    alert('¡No escribiste ninguna sugerencia!');
+  } else if (!sugerenciaExiste(input)) {
+    var textoDelItem = document.createTextNode(input.value);
+    sugerenciaListItem.appendChild(textoDelItem);
+    sugerenciasList.appendChild(sugerenciaListItem);
+    sugerenciasListElements.push(input.value);
   } else {
-    myImage.setAttribute('src','images/map-earth.png');
-  }
-}
-
-//personalized greeting
-/* let myHeading = document.querySelector('h1');
-
-function setUserName() {
-  let myName = prompt('Inserte su nombre, atento lector');
-  if(!myName) {
-    setUserName();
-  } else {
-      localStorage.setItem('name', myName);
-      myHeading.textContent = 'Es nuestra cultura, ' + myName;  
-  };
-}
-
-if(!localStorage.getItem('name')) {
-  setUserName();
-} else {
-  let storedName = localStorage.getItem('name');
-  myHeading.textContent = 'Es nuestra cultura, ' + storedName;
-}
-
-nameChanger.onclick = function() {
-  setUserName();
-}
- */
-
-//dinamic list
-
-const newList = document.querySelector('#listaDenuncias');
-newList.id='listaDenuncias'
-const info = document.createElement('p');
-info.id='itemDenuncia'
-
-let denButton = document.querySelector('#denButton');
-
-info.textContent = 'Arte con referencias al realismo mágico';
-document.body.appendChild(info);
-document.body.appendChild(newList);
-
-function insertDenuncia() {
-  const listItem = document.createElement('li');
-  const listContent = prompt('Escribí acá la manifestación artística que te gustaría que incorporemos al recorrido del proyecto');
-  listItem.textContent = listContent;
-  for (let item of newList.childNodes) { 
-  if (listItem.textContent === item.textContent) {
     alert('¡Gracias por la sugerencia! Igual, ¡la próxima vez podrías ser más atento! Esto ya está en la lista');
-    return
-    }
   }
-  newList.appendChild(listItem);
+  return;
 }
 
-denButton.onclick = function() {
-  insertDenuncia();
-}
+function sugerenciaExiste(input){
+  for (let element of sugerenciasListElements) { 
+    if (input.value === element) {
+      return true;}
+    }
+  return false;
+  }
